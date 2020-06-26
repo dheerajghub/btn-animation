@@ -106,7 +106,7 @@ class AnimationViewController: UIViewController {
     @objc func addBtnPressed(){
         
         if btnState == .close {
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 
                 self.btn1.center.y += 80
                 self.btn2.center.y -= 80
@@ -118,7 +118,7 @@ class AnimationViewController: UIViewController {
                 self.btnState = .open
             } ,completion:nil)
         } else {
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 
                 self.btn1.center.y -= 80
                 self.btn2.center.y += 80
