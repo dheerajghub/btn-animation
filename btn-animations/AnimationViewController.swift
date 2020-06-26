@@ -27,6 +27,7 @@ class AnimationViewController: UIViewController {
         btn.backgroundColor = CustomColor.brown
         btn.layer.cornerRadius = 35
         btn.addTarget(self, action: #selector(addBtnPressed), for: .touchUpInside)
+        btn.setImage(UIImage(named: "add"), for: .normal)
         return btn
     }()
     
@@ -112,15 +113,18 @@ class AnimationViewController: UIViewController {
                 self.btn3.center.x += 80
                 self.btn4.center.x -= 80
                 
+                self.addBtn.transform = .identity
+                
                 self.btnState = .open
             } ,completion:nil)
         } else {
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 
                 self.btn1.center.y -= 80
                 self.btn2.center.y += 80
                 self.btn3.center.x -= 80
                 self.btn4.center.x += 80
+                self.addBtn.transform = CGAffineTransform(rotationAngle: .pi/4)
                 
                 self.btnState = .close
             } ,completion:nil)
